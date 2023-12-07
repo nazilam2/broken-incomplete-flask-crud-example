@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Student</title>
+    <style>
+        /* Basic CSS for layout improvements */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Student</h1>
+
+    <!-- update.html -->
+    <form action="/update/{{ student_id }}" method="POST">
+        <label for="updated_name">Name:</label>
+        <input type="text" id="updated_name" name="name" value="{{ student['Name'] }}" required>
+        <label for="updated_email">Email:</label>
+        <input type="email" id="updated_email" name="email" value="{{ student['Email'] }}" required>
+        <button type="submit">Update Student</button>
+    </form>
+
+</body>
+</html>
